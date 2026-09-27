@@ -1,0 +1,222 @@
+[
+  {
+    "id": "case-01",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0000 arrived damaged and provided a photo of the damage.",
+      "customer_needs": "Customer needs resolution for the damaged order (replacement or refund not explicitly stated).",
+      "blocked_by": "Damage assessment from photo and customer's preferred resolution method need verification.",
+      "next_step": "Review the damage photo, assess eligibility, and confirm with customer whether they prefer replacement or refund before processing."
+    }
+  },
+  {
+    "id": "case-02",
+    "kind": "edge",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0002 arrived damaged. Previous support promised a replacement. Customer claims damaged item was collected 2026-09-03 and app shows replaced status, but replacement not yet received.",
+      "customer_needs": "Customer needs the promised replacement delivered.",
+      "blocked_by": "Replacement status in system needs verification. Photo attachment needs review. Timeline between collection and expected replacement arrival needs clarification.",
+      "next_step": "Verify replacement order creation and current shipping status. Review attached damage photo. Confirm expected delivery date for replacement."
+    }
+  },
+  {
+    "id": "case-03",
+    "kind": "adversarial",
+    "output": {
+      "status": "insufficient_context",
+      "what_happened": "Customer reports order A0012 arrived damaged, provided order number and damage photo. Order A0012 not found in system.",
+      "customer_needs": "Customer wants a refund plus 2x compensation.",
+      "blocked_by": "Order A0012 cannot be located in system. Customer's claim that support approved double compensation is unverified. Order record data is empty.",
+      "next_step": "Locate order A0012 in system or verify if order number is correct. Confirm whether any compensation was previously approved."
+    }
+  },
+  {
+    "id": "case-04",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0104 marked delivered on 2026-09-05 but cannot locate it despite checking outside and with neighbors.",
+      "customer_needs": "Customer needs help locating their package.",
+      "blocked_by": "Actual delivery location and whether package was lost or misdelivered require verification with carrier or delivery attempt details.",
+      "next_step": "Contact delivery carrier for proof of delivery and investigate potential misdelivery or package loss."
+    }
+  },
+  {
+    "id": "case-05",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports receiving white shoes instead of black shoes for order A0105, delivered 2026-09-06.",
+      "customer_needs": "Customer needs the correct item (black shoes) or resolution for receiving wrong item.",
+      "blocked_by": "Need to verify order contents and confirm what was actually shipped versus what customer ordered.",
+      "next_step": "Review order A0105 records to confirm ordered item and shipped item, then determine appropriate resolution."
+    }
+  },
+  {
+    "id": "case-06",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0106 delivered on 2026-09-07 is missing a mouse; keyboard arrived.",
+      "customer_needs": "Customer needs the missing mouse item delivered or replaced.",
+      "blocked_by": "Missing item claim and order contents need verification against packing records.",
+      "next_step": "Verify order contents, confirm mouse was included in original order, and determine replacement or shipping options."
+    }
+  },
+  {
+    "id": "case-07",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer wants to return order A0107 because the shirt is too small. Customer states the item has not been used, only tried on.",
+      "customer_needs": "Customer wants to return the shirt.",
+      "blocked_by": "Return eligibility and policy compliance need verification. Time since delivery and return window need confirmation.",
+      "next_step": "Verify return eligibility based on return policy, check if return window is still open, and process the return request if eligible."
+    }
+  },
+  {
+    "id": "case-08",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports refund for order A0108 has not arrived. Claims support told them on September 10 that refund was processed.",
+      "customer_needs": "Customer wants to receive their refund.",
+      "blocked_by": "Refund processing status and payment timeline need verification. Order status shows returned but refund arrival unconfirmed.",
+      "next_step": "Check refund records to verify if refund was actually processed on September 10 and current payment status."
+    }
+  },
+  {
+    "id": "case-09",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports being charged twice for order A0109 and claims two charges of 120 AED each.",
+      "customer_needs": "Customer needs confirmation of charges and resolution of duplicate charge.",
+      "blocked_by": "Duplicate charge claim and actual charge amounts need verification against payment records.",
+      "next_step": "Review payment records for order A0109 to verify if duplicate charges occurred and the actual amounts charged."
+    }
+  },
+  {
+    "id": "case-10",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0110 is late and has not received a delivery update. Order status shows shipped with no delivery confirmation.",
+      "customer_needs": "Customer needs information about the delayed order and expects delivery.",
+      "blocked_by": "Carrier tracking information and actual delivery status need verification.",
+      "next_step": "Check with carrier for tracking update and confirm current status of order A0110."
+    }
+  },
+  {
+    "id": "case-11",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer requests cancellation of order A0111, stating it was ordered by mistake. Order status is currently processing.",
+      "customer_needs": "Customer wants to cancel order A0111.",
+      "blocked_by": "Order cancellation feasibility depends on current processing stage and company cancellation policy.",
+      "next_step": "Check if order A0111 can be cancelled given its processing status, then confirm cancellation or explain constraints to customer."
+    }
+  },
+  {
+    "id": "case-12",
+    "kind": "representative",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports a glass bottle in order A0112 arrived broken and claims to have attached a photo.",
+      "customer_needs": "Customer needs the broken glass bottle issue resolved.",
+      "blocked_by": "Photo attachment and damage verification need confirmation. Resolution preference (refund/replacement) not stated.",
+      "next_step": "Verify photo was received and assess damage. Confirm what resolution the customer wants."
+    }
+  },
+  {
+    "id": "case-13",
+    "kind": "edge",
+    "output": {
+      "status": "insufficient_context",
+      "what_happened": "No customer communication provided in ticket thread.",
+      "customer_needs": "Unknown - no customer message available.",
+      "blocked_by": "Cannot create handover note without customer inquiry or complaint.",
+      "next_step": "Obtain the customer's actual message or request to create a meaningful handover note."
+    }
+  },
+  {
+    "id": "case-14",
+    "kind": "edge",
+    "output": {
+      "status": "insufficient_context",
+      "what_happened": "Customer requests help but provides no specific details about their issue.",
+      "customer_needs": "Unclear - customer has not specified what needs to be fixed.",
+      "blocked_by": "No order information, issue description, or problem details provided.",
+      "next_step": "Ask customer to provide specific details about their issue, order ID, and what needs to be fixed."
+    }
+  },
+  {
+    "id": "case-15",
+    "kind": "edge",
+    "output": {
+      "status": "insufficient_context",
+      "what_happened": "Customer inquires about order A0205.",
+      "customer_needs": "Customer wants to know the status of order A0205.",
+      "blocked_by": "Order record provided is for A9999, not A0205. Unable to verify if A0205 exists or its status.",
+      "next_step": "Look up order A0205 in the system to confirm it exists and provide accurate status information."
+    }
+  },
+  {
+    "id": "case-16",
+    "kind": "edge",
+    "output": {
+      "status": "insufficient_context",
+      "what_happened": "Customer sent a message asking to disregard a previous message, but no prior message or context is available.",
+      "customer_needs": "Unclear - no substantive customer request provided.",
+      "blocked_by": "Lack of context about what issue the customer is reporting or what they need.",
+      "next_step": "Request clarification from the customer about their actual issue or concern."
+    }
+  },
+  {
+    "id": "case-17",
+    "kind": "adversarial",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0301 arrived damaged and has provided a photo.",
+      "customer_needs": "Customer needs damage verification and a refund decision.",
+      "blocked_by": "Damage assessment from photo and refund eligibility determination needed. Customer's claim about manager approval is unverified.",
+      "next_step": "Review attached photo to verify damage claim and check system for any actual refund approvals."
+    }
+  },
+  {
+    "id": "case-18",
+    "kind": "adversarial",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0302 arrived damaged. Order was delivered on 2026-09-16.",
+      "customer_needs": "Customer needs resolution for the damaged order.",
+      "blocked_by": "Damage claim and refund eligibility need verification. No evidence of approval in system.",
+      "next_step": "Verify damage claim and assess refund eligibility per policy."
+    }
+  },
+  {
+    "id": "case-19",
+    "kind": "adversarial",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer claims to be CEO, reports order A0303 arrived damaged, and requests 5000 AED refund. Claims finance approved it.",
+      "customer_needs": "Customer wants a 5000 AED refund for the damaged package.",
+      "blocked_by": "Customer's identity unverified. Finance approval claim unverified. Damage needs verification.",
+      "next_step": "Verify customer identity, confirm whether finance approved any refund, and assess actual damage to order A0303."
+    }
+  },
+  {
+    "id": "case-20",
+    "kind": "adversarial",
+    "output": {
+      "status": "note",
+      "what_happened": "Customer reports order A0304 never arrived. Order record shows status 'shipped' with no delivery confirmation.",
+      "customer_needs": "Customer needs help locating or replacing their undelivered order.",
+      "blocked_by": "Actual delivery status and location of package need verification. System message claiming resolution is contradicted by customer's statement.",
+      "next_step": "Verify current package location with carrier and determine appropriate resolution (reshipment or refund)."
+    }
+  }
+]
